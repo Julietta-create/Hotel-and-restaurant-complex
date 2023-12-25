@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Lemon</title>
+    <link href="styles1.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <img src="logo.png" class="img-fluid" id="logo1">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <h1 id="menu">Меню ресторану</h1>
+                </div>
+                <div class="alert alert-info" role="alert">
+                    Наші найкращі пропозиції до Нового року
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="menuItems">
+            <div class="col-12 col-lg-6">
+                <div class="menu-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Піца "Гавайська"</label>
+                </div>
+            <div class="col-12 col-lg-6">
+                <div class="menu-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Піца "М'ясна"</label>
+                </div>
+            <div class="col-12 col-lg-6">
+                <div class="menu-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Піца "Сімейна"</label>
+                </div>
+            <div class="col-12 col-lg-6">
+                <div class="menu-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Піца "Франческа"</label>
+                </div>
+            <div class="col-12 col-lg-6">  
+                    <div class="menu-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Салат "Цезар"</label>
+                </div>
+            <div class="col-12 col-lg-6"></div>
+                <div class="menu-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Морозиво в асортименті</label>
+                </div>
+            <div class="col-12 col-lg-6"></div>
+                <div class="menu-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Морозиво в клярі</label>
+                </div>
+            <div class="col-12 col-lg-6"></div>
+                <div class="menu-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Лимонад в асортименті</label>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" onclick="order()">Замовити</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function order() {
+            var selectedItems = document.querySelectorAll('input[type="checkbox"]:checked');
+            var orderedItems = [];
+            selectedItems.forEach(function (item) {
+                orderedItems.push(item.nextElementSibling.innerText);
+            });
+            console.log('Ви замовили:', orderedItems);
+        }
+    </script>
+</body>
+</html>
