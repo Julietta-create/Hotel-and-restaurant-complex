@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Замкова Оаза: Резиденція Юлії</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:400,700&display=swap">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,6 +20,7 @@
             text-align: center;
             padding: 1em;
             border-bottom: 2px solid #555;
+            margin-bottom: 1em;
         }
 
         nav {
@@ -63,14 +65,35 @@
             margin-bottom: 0.5em;
         }
 
-        footer {
+        form {
+            margin-top: 2em;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        input[type="submit"] {
             background-color: #333;
             color: #fff;
-            text-align: center;
-            padding: 1em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
         }
     </style>
 </head>
@@ -83,6 +106,7 @@
 <nav>
     <a href="#about">Про нас</a>
     <a href="#services">Послуги</a>
+    <a href="#booking">Бронювання</a>
     <a href="#contact">Контакти</a>
 </nav>
 
@@ -96,9 +120,64 @@
     <ul>
         <li>Розкішні номери</li>
         <li>Ексклюзивний ресторан</li>
-        <li>SPA та масаж</li>
+        <li>Неповторне SPA</li>
+        <li>Розслаблюючий масаж</li>
+        <li>Просторе джакузі</li>
+        <li>Екзотична їжа</li>
+        <li>Більярд</li>
     </ul>
 </section>
+
+<section id="booking">
+    <h2>Бронювання</h2>
+    <form action="обробник_форми.php" method="post">
+        <label for="hotelSelect">Оберіть номер:</label>
+        <select id="hotelSelect" name="hotel">
+            <option value="hotel3">...</option>
+            <option value="hotel1">Стандартний номер</option>
+            <option value="hotel2">Студія</option>
+            <option value="hotel3">Напівлюкс</option>
+            <option value="hotel3">Люкс</option>
+        </select>
+        <label for="hotelSelect">Оберіть послуги:</label>
+        <select id="hotelSelect" name="hotel">
+            <option value="hotel3">...</option>
+            <option value="hotel1">Сніданок</option>
+            <option value="hotel2">Сніданок та вечеря</option>
+            <option value="hotel3">3 прийоми їжі</option>
+            <option value="hotel3">Все включено</option>
+        </select>
+        <label for="hotelSelect">Оберіть кількість днів:</label>
+        <select id="hotelSelect" name="hotel">
+            <option value="hotel3">...</option>
+            <option value="hotel1">1 день</option>
+            <option value="hotel2">3 дні</option>
+            <option value="hotel3">5 днів</option>
+            <option value="hotel3">7 днів</option>
+            <option value="hotel3">2 тижні</option>
+        </select>
+    </form>
+</section>
+<form action="обробник_форми_підтвердження.php" method="post">
+    <label for="name">Ім'я та прізвище:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Електронна пошта:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Номер телефону:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="paymentMethod">Спосіб оплати:</label>
+    <select id="paymentMethod" name="paymentMethod" required>
+        <option value="creditCard">...</option>
+        <option value="creditCard">Кредитна карта</option>
+        <option value="bankTransfer">Банківський переказ</option>
+        <option value="paypal">PayPal</option>
+    </select>
+
+    <input type="submit" value ="Підтвердити бронювання">
+</form>
 
 <section id="contact">
     <h2>Контакти</h2>

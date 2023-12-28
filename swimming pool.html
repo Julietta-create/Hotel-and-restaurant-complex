@@ -72,23 +72,55 @@
             bottom: 0;
             width: 100%;
         }
+
+        form {
+            margin-top: 2em;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 style="margin: 0;">Замкова Оаза: Резиденція Юлії - Басейнна Розвага</h1>
+    <h1 style="margin: 0;">Замкова Оаза: Резиденція Юлії</h1>
 </header>
 
 <nav>
     <a href="#about">Про нас</a>
     <a href="#services">Послуги</a>
+    <a href="#booking">Бронювання</a>
     <a href="#contact">Контакти</a>
 </nav>
 
 <section id="about">
     <h2>Про нас</h2>
-    <p>Ласкаво просимо в "Замкову Оазу: Резиденцію Юлії - Басейнну Розвагу"! Ми пропонуємо високоякісні послуги для вашого повного розслаблення та відпочинку в басейні.</p>
+    <p>Ласкаво просимо в "Замкову Оазу: Резиденцію Юлії"! Ми пропонуємо високоякісні послуги для вашого повного розслаблення та відпочинку в басейні.</p>
 </section>
 
 <section id="services">
@@ -99,6 +131,29 @@
         <li>Аквааеробіка</li>
     </ul>
 </section>
+
+<section id="booking">
+    <h2>Бронювання</h2>
+    <form action="обробник_форми_підтвердження.php" method="post">
+        <label for="name">Ім'я та прізвище:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="phone">Номер телефону:</label>
+        <input type="tel" id="phone" name="phone" required>
+    
+        <label for="entertainment">Вид басейну:</label>
+        <select id="entertainment" name="entertainment" required>
+            <option value="luxuryRooms">...</option>
+            <option value="luxuryRooms">Олімпійський басейн</option>
+            <option value="exclusiveRestaurant">Дитячий басейн</option>
+            <option value="uniqueSpa">Аквааеробіка</option>
+        </select>
+    
+        <input type="submit" value ="Підтвердити бронювання">
+    </form>
 
 <section id="contact">
     <h2>Контакти</h2>
